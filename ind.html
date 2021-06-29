@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+        <style>
+           html,body{
+        width: 100%;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+    } 
+
+    #wrapper{
+        min-width: 1000px;
+    }
+
+    section{
+        min-height: 100vh;
+    }
+
+    #first{
+        color: whitesmoke;
+        background: url('1.jpeg') no-repeat center;
+        background-size: cover;   
+    }
+
+    #first .background{
+        background-image: none;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+          </style>
+          </head>
+<body>
+  <div id="wrapper">
+      <section id="first">
+          <div class="background"></div>
+          <div class="videoBackground"></div>
+          <div class="content">
+              <div id="titleGFS" class="title">Ipse eorum</div>
+              <div id="txt1" class="text">Ipse eorum opinionibus accedo, qui Germaniae...</div>
+              <div id="txt2" class="text">Personalmente inclino verso l'opinione di quanti ritengono che i popoli della Germania...</div>
+          </div>
+      </section>
+
+      <!-- other sections -->
+
+  </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+  <script>
+
+$('#first').css({background:'none'});
+
+/*Scrolling*/
+$(window).scroll(function(){
+    var $maxScroll=500;
+    var $maxScale=1.3;
+    var $x=$(window).scrollTop()/100+1;
+    console.log("scrollTop : " + $(window).scrollTop() + "- x : " + $x);
+    if($(window).scrollTop()>$maxScroll) $x=$maxScale;
+//    $('#first .background').css({transform: 'scale('+$x+','+$x+')'});
+
+        $('#first .background').css({transform: 'scale('+$x+','+$x+')'});
+
+});
+
+  </script>
+</html>
